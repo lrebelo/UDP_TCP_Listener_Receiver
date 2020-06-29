@@ -81,13 +81,10 @@ namespace UDP_TCP_Listener_Receiver
                     IPEndPoint brdcatLoc = new IPEndPoint(0, 0);
                     while (true)
                     {
-                        //IPEndPoint brdcatLoc = new IPEndPoint(IPAddress.Broadcast, 000);
-
                         byte[] brodReciveByt = udpClient.Receive(ref brdcatLoc);
                         string brodReciveString = Encoding.ASCII.GetString(brodReciveByt);
                         Console.WriteLine("UDPbroadcastServer :: Recived: \n {0} \n from {1}\n\n", brodReciveString, brdcatLoc.Address.ToString());
                     }
-
                 }
                 catch (Exception e)
                 {
